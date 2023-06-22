@@ -11,9 +11,9 @@ import { Layout, Menu, Button, theme } from 'antd';
 const { Header, Sider, Content } = Layout;
 const MainLayout = () => {
   const [collapsed, setCollapsed] = useState(false);
-  const {
-    token: { colorBgContainer },
-  } = theme.useToken();
+  // const {
+  //   token: { colorBgContainer },
+  // } = theme.useToken();
 //   const navigate = useNavigate();
   return (
     <Layout>
@@ -46,7 +46,7 @@ const MainLayout = () => {
         <Header
           style={{
             padding: 0,
-            background: colorBgContainer,
+            // background: colorBgContainer,
           }}
         >
           <Button
@@ -65,7 +65,7 @@ const MainLayout = () => {
             margin: '24px 16px',
             padding: 24,
             minHeight: 280,
-            background: colorBgContainer,
+            // background: colorBgContainer,
           }}
         >
           Content
