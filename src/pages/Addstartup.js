@@ -4,6 +4,23 @@ import ReactQuill from "react-quill";
 import "react-quill/dist/quill.snow.css";
 import { InboxOutlined } from "@ant-design/icons";
 import { message, Upload } from "antd";
+import { Radio } from 'antd';
+
+const verifiedoptions = [
+  {
+    label: 'Yes',
+    value: true,
+  },
+  {
+    label: 'No',
+    value: false,
+  },
+  // {
+  //   label: 'Orange',
+  //   value: 'Orange',
+  //   disabled: true,
+  // },
+];
 const { Dragger } = Upload;
 const props = {
   name: "file",
@@ -24,7 +41,13 @@ const props = {
     console.log("Dropped files", e.dataTransfer.files);
   },
 };
+
 const Addstartup = () => {
+  const [isVerifiedValue, setisVerifiedValue] = useState(false);
+  const isVerifiedValueChanged = ({ target: { value } }) => {
+    console.log('isVerified radio checked', value);
+    setisVerifiedValue(value);
+  };
   const [desc, setDesc] = useState();
   const handleDesc = (e) => {
     setDesc(e);
@@ -34,27 +57,118 @@ const Addstartup = () => {
       <h3 className="mb-4 title">Add Startup</h3>
       <div>
         <form>
-          <CustomInput type="text" label="Enter Startup Title" />
+          {/* Startup's name */}
           <div className="mb-3">
+          <CustomInput
+            type="text"
+            label="Enter Startup's name"
+            name="name"
+            required
+          />
+          </div>
+          {/* description string */}
+          <div className="mb-3">
+            <label>Description</label>
             <ReactQuill
               theme="snow"
+              id="desc"
               value={desc}
+              name="description"
+              placeholder="Describe as well you can the startup"
+              required
               onChange={(evt) => {
                 handleDesc(evt);
               }}
             />
           </div>
-          <CustomInput type="number" label="Enter Startup Price" />
-          <select name="" className="form-control py-3 mb-3" id="">
-            <option value="">Select Brand</option>
+          {/* website url */}
+          <CustomInput type="text" label="Url of your website" name="website" />
+          {/* address */}
+          <CustomInput
+            type="text"
+            label="Enter Startup's address(*)"
+            name="address"
+            required
+          />
+          {/* email */}
+          <CustomInput
+            type="email"
+            label="Enter Startup's email(*)"
+            name="email"
+            required
+          />
+          {/* Mobile number */}
+          <CustomInput
+            type="tel"
+            label="Enter Startup Number(*)"
+            name="mobile"
+            required
+          />
+          {/* Market Value */}
+          <CustomInput
+            type="number"
+            label="How many is your capital ?"
+            name="market_value"
+          />
+          {/* Category enum */}
+          <label>Category</label>
+          <select
+            name="category"
+            className="form-control py-3 mb-3"
+            id="categoryinput"
+            required
+          >
+            <option value="">Select Category Branch</option>
+            <option value="Services Technologiques">
+              Services Technologiques
+            </option>
+            <option value="FinTech">FinTech</option>
+            <option value="BioTech">BioTech</option>
+            <option value="HealthTech">HealthTech</option>
+            <option value="CleanTech">CleanTech</option>
+            <option value="AgTech">AgTech</option>
+            <option value="EdTech">EdTech</option>
           </select>
-          <select name="" className="form-control py-3 mb-3" id="">
-            <option value="">Select Category</option>
-          </select>
-          <select name="" className="form-control py-3 mb-3" id="">
-            <option value="">Select Color</option>
-          </select>
-          <CustomInput type="number" label="Enter Startup Price" />
+          {/* Subcategory */}
+          <CustomInput
+            type="text"
+            label="Your Subcategory"
+            name="subcategory"
+            required
+          />
+          {/* Price of an action shares */}
+          <CustomInput
+            type="number"
+            label="Price of one of your startup's action/shares (min:0)?"
+            name="price"
+            required
+          />
+          {/* Quantity numbers max of action that can be sold */}
+          <CustomInput
+            type="number"
+            label="Numbers max of action that can be sold (min:0)?"
+            name="quantity"
+            required
+          />
+          {/* Sell How many actions/ have you already sold until now ? */}
+          <CustomInput
+            type="number"
+            label="How many actions/ have you already sold until now (min:0)?"
+            name="sell"
+            required
+          />
+          {/* isVerified */}
+          <div className="py-2 my-1">
+          <label className="inline">Is Verified :</label>
+          <Radio.Group
+            options={verifiedoptions}
+            onChange={isVerifiedValueChanged}
+            value={isVerifiedValue}
+            optionType="button"
+            buttonStyle="solid"
+          />
+          </div>
+          {/* Images Logo brand and other files upload */}
           <Dragger {...props}>
             <p className="ant-upload-drag-icon">
               <InboxOutlined />
@@ -64,9 +178,10 @@ const Addstartup = () => {
             </p>
             <p className="ant-upload-hint">
               Support for a single or bulk upload. Strictly prohibit from
-              uploading company data or other band files
+              uploading company data or other brand files
             </p>
           </Dragger>
+          {/* Submit Button */}
           <button
             className="btn btn-success border-0 rounded-3 my-5"
             type="submit"

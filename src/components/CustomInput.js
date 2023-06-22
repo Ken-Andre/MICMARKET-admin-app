@@ -1,7 +1,7 @@
 import React from "react";
 
 const CustomInput = (props) => {
-  const { type, label, i_id, i_class, name, val, onChng, onBlr } = props;
+  const { type, label, i_id, i_class, name, val, onChng, onBlr, required } = props;
   return (
     <div className="form-floating mt-3">
       <input
@@ -13,6 +13,9 @@ const CustomInput = (props) => {
         value={val}
         onChange={onChng}
         onBlur={onBlr}
+        // spread operator used here to conditionally
+        // add the required attribute
+        {...(required && { required: true })}
       />
       <label htmlFor={label}>{label}</label>
     </div>
