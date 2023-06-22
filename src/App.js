@@ -5,6 +5,12 @@ import Dashboard from "./pages/Dashboard";
 import Login from "./pages/Login";
 import Resetpassword from "./pages/Resetpassword.js";
 import Forgotpassword from "./pages/Forgotpassword";
+import Enquiries from "./pages/Enquiries";
+import Addproduct from "./pages/Addstartup";
+
+import Orders from "./pages/Orders";
+import Customers from "./pages/Customers";
+import Startuplist from "./pages/Startuplist";
 function App() {
   return (
     <Router>
@@ -14,6 +20,11 @@ function App() {
         <Route path="/forgot-password" element={<Forgotpassword />} />
         <Route path="/admin" element={<MainLayout />}>
           <Route index element={<Dashboard />} />
+          <Route path="customers" element={<Customers />} />
+          <Route path="startup" element={<Addproduct />} />
+          <Route path="list-startup" element={<Startuplist />} />
+          <Route path="orders" element={<Orders />} />
+          <Route path="enquiries" element={<Enquiries />} />
         </Route>
       </Routes>
     </Router>
