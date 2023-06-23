@@ -8,7 +8,8 @@ import {
   AiOutlineAccountBook,
   AiOutlineProfile,
 } from "react-icons/ai";
-import { Link } from "react-router-dom";
+import { useLocation } from "react-router";
+import { Link, useParams } from "react-router-dom";
 import { Outlet } from "react-router-dom";
 import { ImBlog } from "react-icons/im";
 import { IoIosNotifications } from "react-icons/io";
@@ -19,6 +20,7 @@ import { Layout, Menu, theme } from "antd";
 import { useNavigate } from "react-router-dom";
 const { Header, Sider, Content } = Layout;
 const MainLayout = () => {
+  const { id } = useParams();
   const [collapsed, setCollapsed] = useState(false);
   const {
     token: { colorBgContainer },
@@ -37,10 +39,15 @@ const MainLayout = () => {
           theme="dark"
           mode="inline"
           defaultSelectedKeys={[""]}
+          // selectedKeys={[location.pathname]}
           onClick={({ key }) => {
-            if (key == "signout") {
+            if (key === "signout") {
+              // handle signout
             } else {
-              navigate(key);
+              // check if key has a number at the end
+
+                navigate(key);
+
             }
           }}
           items={[
@@ -53,6 +60,18 @@ const MainLayout = () => {
               key: "customers",
               icon: <AiOutlineUser className="fs-4" />,
               label: "Customers",
+              children: [
+                {
+                  key: "customers",
+                  icon: <AiOutlineAccountBook className="fs-4" />,
+                  label: "User List",
+                },
+                {
+                  key: "list-startup",
+                  icon: <AiOutlineAccountBook className="fs-4" />,
+                  label: "Startup List",
+                },
+              ],
             },
             {
               key: "Catalog",
@@ -63,6 +82,13 @@ const MainLayout = () => {
                   key: "startup",
                   icon: <AiOutlineAccountBook className="fs-4" />,
                   label: "Add Startup",
+                },
+                {
+                  key: id ? `update-startup/${id}` : "update-startup",
+                  icon: <AiOutlineAccountBook className="fs-4" />,
+                  label: "Modify a Startup",
+
+
                 },
                 {
                   key: "list-startup",
