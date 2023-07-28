@@ -10,6 +10,7 @@ import Addstartup from "./pages/Addstartup";
 
 import Orders from "./pages/Orders";
 import Customers from "./pages/Customers";
+import SCustomers from "./pages/SCustomers";
 import Startuplist from "./pages/Startuplist";
 import Updatestartupdis from "./pages/Updatestartupdis";
 import Updatestartup from "./pages/Updatestartup";
@@ -24,6 +25,7 @@ function App() {
         <Route path="/admin" element={<MainLayout />}>
           <Route index element={<Dashboard />} />
           <Route path="customers" element={<Customers />} />
+          <Route path="sCustomers" element={<SCustomers />} />
           <Route path="list-startup" element={<Startuplist />} />
           <Route path="startup" element={<Addstartup />} />
           <Route path="update-startup" element={<Updatestartupdis />} />

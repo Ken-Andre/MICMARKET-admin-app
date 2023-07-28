@@ -32,7 +32,7 @@ const columns = [
   },
 ];
 
-const Customers = () => {
+const SCustomers = () => {
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(getUsers());
@@ -40,7 +40,7 @@ const Customers = () => {
   const customerState = useSelector((state) => state.customer.customers);
   const data1 = [];
   for (let i = 0; i < customerState.length; i++) {
-    if(customerState[i].role === "user"){
+    if(customerState[i].role === "startup"){
       data1.push({
         key: i+1,
         name: customerState[i].firstname + " " + customerState[i].lastname,
@@ -49,7 +49,7 @@ const Customers = () => {
         role: customerState[i].role,
         status: toString(customerState[i].isBlocked),
       });
-      // console.log(`The data ${i}:`, data1);
+      console.log(`The data ${i}:`, data1);
     }
   }
 
@@ -63,4 +63,4 @@ const Customers = () => {
   );
 };
 
-export default Customers;
+export default SCustomers;

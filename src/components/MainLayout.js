@@ -67,9 +67,9 @@ const MainLayout = () => {
                   label: "User List",
                 },
                 {
-                  key: "list-startup",
+                  key: "sCustomers",
                   icon: <AiOutlineAccountBook className="fs-4" />,
-                  label: "Startup List",
+                  label: "Startup User List",
                 },
               ],
             },
