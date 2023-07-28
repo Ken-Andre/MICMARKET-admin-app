@@ -2,7 +2,7 @@ import { configureStore } from "@reduxjs/toolkit";
 import authReducer from "../features/auth/authSlice";
 import customerReducer from "../features/customers/customerSlice";
 import startupReducer from "../features/startup/startupSlice";
-// import brandReducer from "../features/brand/brandSlice";
+import categoryReducer from "../features/category/categorySlice";
 // import pCategoryReducer from "../features/pcategory/pcategorySlice";
 // import bCategoryReducer from "../features/bcategory/bcategorySlice";
 // import blogReducer from "../features/blogs/blogSlice";
@@ -15,7 +15,7 @@ export const store = configureStore({
     auth: authReducer,
     customer: customerReducer,
     startup: startupReducer,
-    // brand: brandReducer,
+    category: categoryReducer,
     // pCategory: pCategoryReducer,
     // bCategory: bCategoryReducer,
     // blogs: blogReducer,

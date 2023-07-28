@@ -34,6 +34,7 @@ const columns = [
 
 const SCustomers = () => {
   const dispatch = useDispatch();
+  let isBlocked = "";
   useEffect(() => {
     dispatch(getUsers());
   }, []);
@@ -41,13 +42,19 @@ const SCustomers = () => {
   const data1 = [];
   for (let i = 0; i < customerState.length; i++) {
     if(customerState[i].role === "startup"){
+      if (customerState[i].isBlocked) {
+        isBlocked = "Blocked";
+      } else {
+        isBlocked = "Not Blocked";
+      }
       data1.push({
         key: i+1,
         name: customerState[i].firstname + " " + customerState[i].lastname,
         email: customerState[i].email,
         mobile: customerState[i].mobile,
         role: customerState[i].role,
-        status: toString(customerState[i].isBlocked),
+        // status: toString(customerState[i].isBlocked),
+        status: isBlocked,
       });
       console.log(`The data ${i}:`, data1);
     }
