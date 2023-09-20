@@ -1,43 +1,64 @@
-# Getting Started with Create React App
+# MICMARKET-admin-app
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+MICMARKET-admin-app is a React-Redux application created with Create React App. It provides administrative functionality for managing the MICMARKET end user website.
 
-## Available Scripts
+## Features
 
-In the project directory, you can run:
+- [Mention the key features and functionalities of your app]
 
-### `npm start`
+## Installation
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Follow these steps to install and run the MICMARKET-admin-app:
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+1. Clone the repository:
 
-### `npm test`
+   ```shell
+   git clone https://github.com/Ken-Andre/MICMARKET-admin-app.git
+   ```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+2. Navigate to the project directory:
+    ```shell
+    cd MICMARKET-admin-app
+    ```
 
-### `npm run build`
+3. Install the dependencies:
+    ```shell
+    npm install
+    ```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+4. Start the development server:
+    ```
+    npm start
+    ```
+    
+  The app will be accessible at http://localhost:3001 or at the ip adresss:3001(_Ex: http://127.0.0.1:3001_) of your server in your browser.
+## Deployment
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+[If applicable, provide instructions on how to deploy the app to a production environment.]
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Contributing
 
-### `npm run eject`
+Contributions are welcome! If you'd like to contribute to MICMARKET-admin-app, please follow these steps:
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+    Fork the repository.
+    Create a new branch: git checkout -b my-feature-branch.
+    Make your changes and commit them: git commit -m "Add new feature".
+    Push your changes to the branch: git push origin my-feature-branch.
+    Submit a pull request detailing your changes.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## How It Works
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+[Provide a brief explanation of how the MICMARKET-admin-app works or give an overview of its architecture and functionality.]
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## License
+
+MICMARKET-admin-app is licensed under the Creative Commons Attribution-NonCommercial-NoDerivatives (CC BY-NC-ND) license.
+
+This means you are free to use and share the software for personal, non-commercial purposes, but you cannot modify it or distribute it commercially without prior written permission.
+
+
+
+
 
 ## Learn More
 
@@ -45,26 +66,3 @@ You can learn more in the [Create React App documentation](https://facebook.gith
 
 To learn React, check out the [React documentation](https://reactjs.org/).
 
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
