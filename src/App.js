@@ -13,6 +13,7 @@ import Customers from "./pages/Customers";
 import SCustomers from "./pages/SCustomers";
 import Startuplist from "./pages/Startuplist";
 import CategoryList from "./pages/Category";
+import Addcat from "./pages/AddCat";
 import Updatestartupdis from "./pages/Updatestartupdis";
 import Updatestartup from "./pages/Updatestartup";
 
@@ -28,7 +29,10 @@ function App() {
           <Route path="customers" element={<Customers />} />
           <Route path="sCustomers" element={<SCustomers />} />
           <Route path="list-startup" element={<Startuplist />} />
-          <Route path="category" element={<CategoryList />} />
+          {/* <Route path="category" element={<CategoryList />} /> */}
+          <Route path="list-category" element={<CategoryList />} />
+          <Route path="category" element={<Addcat />} />
+          <Route path="category/:id" element={<Addcat />} />
           <Route path="startup" element={<Addstartup />} />
           <Route path="update-startup" element={<Updatestartupdis />} />
           <Route path="update-startup/:id" element={<Updatestartup />} />
