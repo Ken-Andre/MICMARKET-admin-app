@@ -45,7 +45,7 @@ body {
   display: none;
 }
 .logo {
-  background-color: #ffd333;
+  background-color: #f08014; /* ffd333*/
   margin: 0;
   height: 64px;
 }
@@ -77,3 +77,7 @@ main::-webkit-scrollbar {
   font-size: 12px;
 }
 
+.custom-scrollbar {
+  max-height: 40vh;
+  overflow-y: auto;
+}
